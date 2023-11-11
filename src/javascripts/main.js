@@ -25,7 +25,7 @@ function getCards(){
     if(localStorage.getItem('cards')&& localStorage.getItem("cards") != '[]'){
         return JSON.parse(localStorage.getItem('cards'))
     }else{
-        return inital_cards
+        return initial_cards
     }
 }
 
@@ -73,7 +73,7 @@ function displayCards(){
     document.querySelectorAll('.to-delete').forEach(function(btn){
         btn.onclick = function(event){
             if(confirm("Are you sure you want to delete this card?")){
-                cards.splice(event.target.closet('.col').dataset.ndx, 1)
+                cards.splice(event.target.closest('.col').dataset.ndx, 1)
                 localStorage.setItem("cards", JSON.stringify(cards))
                 displayCards()
             }
